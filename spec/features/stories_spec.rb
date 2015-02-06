@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Managing Stories' do
   scenario 'list all stories' do
+    User.destroy_all
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
     Story.create!(title: 'three blind mice')

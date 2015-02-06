@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe UsersController do
+RSpec.describe StoriesController do
   describe 'GET index' do
     it 'has a 200 status code' do
       get :index
@@ -12,10 +12,10 @@ RSpec.describe UsersController do
       expect(response).to render_template('index')
     end
 
-    it 'assigns @articles' do
-      users = User.all
+    it 'assigns @stories' do
+      stories = Story.all
       get :index
-      expect(assigns(:users)).to eq users
+      expect(assigns(:stories)).to eq stories
     end
   end
 
@@ -30,9 +30,9 @@ RSpec.describe UsersController do
       expect(response).to render_template('new')
     end
 
-    it 'assigns @user' do
+    it 'assigns @story' do
       get :new
-      expect(assigns(:user)).to be_a_new User
+      expect(assigns(:story)).to be_a_new Story
     end
   end
 
