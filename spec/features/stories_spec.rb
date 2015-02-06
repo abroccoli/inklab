@@ -31,5 +31,4 @@ RSpec.feature 'Managing Stories' do
 
     Warden.test_reset!
   end
-
 end
