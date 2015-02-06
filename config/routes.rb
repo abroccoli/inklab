@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root 'stories#index'
   devise_for :users
 
-  resources :stories
+
+  resources :stories do
+    resources :lines, only: [:index, :new, :create]
+  end
 
   #resources :users, only: :index
   # The priority is based upon order of creation: first created -> highest priority.
