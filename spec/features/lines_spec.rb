@@ -33,7 +33,7 @@ RSpec.feature 'Managing Story Lines' do
     story1.lines.create!(content: 'Who liked to travel around the world.')
     story2.lines.create!(content: 'Cats are already crazy, now they are even more nuts.')
 
-    visit "/stories/#{story1.id}/lines"
+    visit "/stories/#{story1.id}"
 
     expect(page).to have_selector 'p', count: 1
 
