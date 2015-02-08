@@ -1,9 +1,3 @@
 <h1>Create a New Story!</h1>
 
-<%= form_for [@story] do |f| %>
-
-    <%= f.label :title %>
-    <%= f.text_area :title %>
-
-    <%= f.submit 'Create Story' %>
-<% end %>
+<%=render 'form'%>

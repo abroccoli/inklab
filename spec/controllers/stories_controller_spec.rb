@@ -80,8 +80,4 @@ RSpec.describe StoriesController do
       end
     end
   end
-
-
-
-
 end
