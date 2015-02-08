@@ -3,13 +3,12 @@ require 'rails_helper'
 RSpec.describe LinesController do
 
     let(:valid_attributes) {
-    { title: 'This be the tale of Davy Jones', entries:[]}
+    { title: 'This be the tale of Davy Jones'}
   }
 
   let(:invalid_attributes) {
     { title: nil}
   }
-
 
   describe 'GET index' do
     it 'has a 200 status code' do

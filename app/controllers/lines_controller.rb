@@ -5,6 +5,7 @@ class LinesController < ApplicationController
     @lines = @story.lines
   end
 
+
   private
 
   def set_story
