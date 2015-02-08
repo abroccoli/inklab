@@ -14,7 +14,7 @@ class LinesController < ApplicationController
 
     if @line.save
       flash[:success] = 'Story successfully created.'
-      redirect_to story_lines_path(@story)
+      redirect_to story_path(@story)
     else
       render :new
     end
