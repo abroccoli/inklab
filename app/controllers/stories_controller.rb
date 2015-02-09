@@ -17,6 +17,7 @@ class StoriesController < ApplicationController
     @story = Story.new(story_params)
 
     if @story.save
+      @story.lines.create(content: params["story"]["lines_attributes"]["0"]["content"])
       flash[:success] = 'Story successfully created!'
       redirect_to story_path(@story)
     else
@@ -28,6 +29,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title)
+    params.require(:story).permit(:title, :lines_attributes)
   end
 end
