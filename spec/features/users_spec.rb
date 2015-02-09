@@ -1,23 +1,22 @@
 require 'rails_helper'
 
-# RSpec.feature 'Managing Users' do
-#   scenario 'list all users' do
-#     User.create!(email: 'something@fake.com', password: 'patriots')
-#     User.create!(email: 'somethingelse@fake.com', password: 'patriots')
+RSpec.feature 'Managing Users' do
+  scenario 'list all stories for a User' do
+    User.destroy_all
+    user = FactoryGirl.create(:user)
+    login_as(user, :scope => :user)
 
-#     visit '/users'
+    story1 = Story.create!(title: 'three blind mice')
+    story2 = Story.create!(title: 'cats can fly')
 
-#     expect(page).to have_content 'Users'
-#     expect(page).to have_selector 'li', count: 2
-#   end
+    story1.lines.create!(content: 'once upon a time there were three ugly ass mice.')
+    story1.lines.create!(content: 'Who liked to travel around the world.')
+    story2.lines.create!(content: 'Cats are already crazy, now they are even more nuts.')
 
-#   scenario 'register a new user' do
-#     visit '/users/new'
+    visit "/users/#{user.id}/stories"
 
-#     fill_in 'Email', with: 'somedude@aplace.com'
-#     fill_in 'Password', with: "ieatboogers"
-#     click_on 'Register'
+    expect(page).to have_content "#{story1.title}"
 
-#     expect(page).to have_content(/success/i)
-#   end
-# end
+    Warden.test_reset!
+  end
+end

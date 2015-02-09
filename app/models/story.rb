@@ -12,5 +12,4 @@ class Story < ActiveRecord::Base
   def last_line
     lines.last.content.capitalize
   end
-
 end

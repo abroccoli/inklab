@@ -26,7 +26,4 @@ RSpec.describe Story, :type => :model do
       expect(story.last_line).to eq 'They liked to travel around the world.'
     end
   end
-
-
-
 end
