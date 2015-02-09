@@ -3,5 +3,10 @@
     <%= f.label :title %>
     <%= f.text_area :title %>
 
+    <%= f.fields_for :lines do |line_f| %>
+     <%= line_f.label :content %>
+     <%= line_f.text_area :content %>
+    <% end %>
+
     <%= f.submit 'Create Story' %>
 <% end %>

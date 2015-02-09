@@ -5,3 +5,5 @@
     <li><%="#{story.title}"%><%= link_to "Show Story", story_path(story.id)%><%= link_to "Add to Story", new_story_line_path(story.id)%></li>
   </ul>
 <% end %>
+
+<%= link_to "Create New Story", new_story_path%>
