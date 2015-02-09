@@ -19,7 +19,25 @@
 
 
 .center
-     float: none
-     margin-left: auto
-     margin-right: auto
+    float: none
+    margin-left: auto
+    margin-right: auto
 
+
+#right
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    overflow-y: scroll
+
+.table-striped>tbody>tr:nth-child(odd)>td,
+.table-striped>tbody>tr:nth-child(odd)>th
+    background-color: #FFFACD
+
+.table-striped>tbody>tr:nth-child(even)>td,
+.table-striped>tbody>tr:nth-child(even)>th
+    background-color: #FFFFE0
+
+body
+    background-image: url(/assets/desk_top.png)
