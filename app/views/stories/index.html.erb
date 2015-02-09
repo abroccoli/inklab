@@ -1,11 +1,33 @@
-<h1>Stories:</h1>
+<div class="container">
+  <div class="row clearfix">
+    <div class="col-md-3 column">
+      <h1>Stories:</h1>
 
-<% @stories.each do |story| %>
-  <ul>
-    <li><%="#{story.title}"%><%= link_to "Show Story", story_path(story.id)%><%= link_to "Add to Story", new_story_line_path(story.id)%></li>
-  </ul>
-<% end %>
+      <%= link_to "Create New Story", new_story_path%>
+      <br>
+      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+    </div>
+    <div class="col-md-9 column">
+      <table class = "table table-striped">
+        <thead>
+          <tr>
+            <th>Story Title</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @stories.each do |story| %>
+          <tr>
+            <td><%="#{story.title}"%></td>
+            <td><%= link_to "Show Story", story_path(story.id), class: 'btn btn-default'%></td>
+            <td><%= link_to new_story_line_path(story.id), class: 'btn btn-success' do %>
+            <i class="glyphicon glyphicon-pencil"></i> Add to Story
+            <%end%></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
-<%= link_to "Create New Story", new_story_path%>
 
-<%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
