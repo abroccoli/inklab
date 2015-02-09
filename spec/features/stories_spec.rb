@@ -21,7 +21,7 @@ RSpec.feature 'Managing Stories' do
     user = FactoryGirl.create(:user)
     login_as(user, :scope => :user)
 
-    visit '/stories/new'
+    visit "/stories/new"
 
     fill_in 'Title', with: 'This be the tale of Davy Jones'
 
