@@ -1,14 +1,14 @@
 require 'rails_helper'
 
-# RSpec.describe 'routes for users' do
-#   it 'routes GET /users to the users controller' do
-#     expect(get('/users')).to route_to('users#index')
-#   end
-
-#   it 'routes GET /users/sign_up to the users controller' do
-#     expect(get('/users/sign_up')).to route_to('devise/registrations#new')
-#   end
-# end
+RSpec.describe 'routes for users' do
+  it 'routes GET /users/:id/stories to the users controller' do
+      expect(get('/users/1/stories')).to route_to(
+      controller: 'stories',
+      action: 'index',
+      user_id: '1'
+      )
+  end
+end
 
 
 

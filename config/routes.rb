@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root 'stories#index'
   devise_for :users
 
+  resources :users do
+    resources :stories, only: [:index, :new, :create]
+  end
 
   resources :stories do
     resources :lines, only: [:index, :new, :create]
