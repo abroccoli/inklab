@@ -1,12 +1,13 @@
 <%= form_for [@story] do |f| %>
 
-    <%= f.label :title %>
-    <%= f.text_area :title %>
-
+    <%= f.label :title, class: 'form_label' %>
+    <br>
+    <%= f.text_area :title, class: 'line_entry' %>
+    <br>
     <%= f.fields_for :lines, @story.lines.new do |line_f| %>
-      Line content: <%= line_f.text_field :content %>
+      <p class="form_label">First line:</p> <%= line_f.text_field :content, class: 'line_entry' %>
     <% end %>
-
-    <%= f.submit 'Create Story' %>
+    <br>
+    <%= f.submit 'Create Story', class: 'btn btn-black' %>
 <% end %>
 
