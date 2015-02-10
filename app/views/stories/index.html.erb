@@ -17,7 +17,7 @@
         <tbody>
           <% @stories.each do |story| %>
           <tr>
-            <td><%="#{story.title}"%></td>
+            <td class="title_text"><%="#{story.title}"%></td>
             <td><%= link_to "Show Story", story_path(story.id), class: 'btn btn-default'%></td>
             <td><%= link_to new_story_line_path(story.id), class: 'btn btn-black' do %>
             <i class="glyphicon glyphicon-pencil"></i> Add to Story
