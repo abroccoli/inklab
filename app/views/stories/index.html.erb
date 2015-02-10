@@ -3,9 +3,9 @@
     <div class="col-md-3 column">
       <h1>Stories:</h1>
 
-      <%= link_to "Create New Story", new_story_path%>
+      <%= link_to "Create New Story", new_story_path, class: 'link_format'%>
       <br>
-      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
+      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'link_format' %>
     </div>
     <div class="col-md-9 column" id = "right">
       <table class = "table table-striped">
@@ -19,7 +19,7 @@
           <tr>
             <td><%="#{story.title}"%></td>
             <td><%= link_to "Show Story", story_path(story.id), class: 'btn btn-default'%></td>
-            <td><%= link_to new_story_line_path(story.id), class: 'btn btn-success' do %>
+            <td><%= link_to new_story_line_path(story.id), class: 'btn btn-black' do %>
             <i class="glyphicon glyphicon-pencil"></i> Add to Story
             <%end%></td>
           </tr>
