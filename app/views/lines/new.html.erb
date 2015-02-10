@@ -1,7 +1,16 @@
-<h1>Add a Line to the story!</h1>
+<div class="container desk">
+  <div class="row clearfix">
+    <div class="col-md-3 column">
+      <h1>Add a Line to the story!</h1>
 
-<h3>Previous entry:</h3>
-<%=@story.last_line%>
-
-
-<%= render 'form' %>
+      <%= link_to "All Stories", stories_path, class: 'link_format'%>
+      <br>
+      <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'link_format' %>
+    </div>
+    <div class="col-md-9 column pad" id = "right">
+      <h3>Previous entry:</h3>
+      <p class = "last_line"><%=@story.last_line%></p>
+      <%= render 'form' %>
+    </div>
+  </div>
+</div>
