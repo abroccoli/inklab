@@ -1,3 +1,4 @@
+require 'byebug'
 class LinesController < ApplicationController
   before_action :set_story
 
@@ -10,7 +11,8 @@ class LinesController < ApplicationController
   end
 
   def create
-    @line = @story.lines.build(line_params)
+    # binding.byebug
+    @line = @story.lines.new(line_params)
 
     if @line.save
       flash[:success] = 'Story successfully created.'

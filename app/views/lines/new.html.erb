@@ -8,8 +8,6 @@
       <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'link_format' %>
     </div>
     <div class="col-md-9 column pad" id = "right">
-      <h3>Previous entry:</h3>
-      <p class = "last_line"><%=@story.last_line%></p>
       <%= render 'form' %>
     </div>
   </div>

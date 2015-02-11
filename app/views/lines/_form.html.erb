@@ -1,5 +1,16 @@
 <%= form_for [@story, @line] do |f| %>
-
+  <% if @line.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      Hey!
+      <ul>
+      <% @line.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <h3>Previous entry:</h3>
+    <p class = "last_line"><%= @story.last_line %></p>
     <%= f.label 'enter new line:', class: 'form_label'%>
     <br>
     <%= f.text_area :content, class: 'line_entry' %>
