@@ -24,7 +24,7 @@ class LinesController < ApplicationController
   private
 
   def line_params
-    params.require(:line).permit(:content)
+    params.require(:line).permit(:content).merge(user_id: current_user.id)
   end
 
   def set_story
