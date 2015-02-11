@@ -1,5 +1,5 @@
 class StoriesController < ApplicationController
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   def private
     @stories = Story.where(user_id: current_user.id)
