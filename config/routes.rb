@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'stories#index'
+  get 'stories/private', to: 'stories#private'
   devise_for :users do
      resources :stories, only: [:index] do
       resources :lines, only: [:index]

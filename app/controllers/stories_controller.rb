@@ -1,6 +1,10 @@
 class StoriesController < ApplicationController
   # before_action :authenticate_user!
 
+  def private
+    @stories = Story.where(user_id = current_user.id)
+  end
+
   def index
     @stories = Story.all
   end
