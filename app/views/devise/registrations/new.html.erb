@@ -1,17 +1,15 @@
-<div class="container">
-  <div class="row clearfix">
     <div class="center">
       <h2>Sign up</h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.label :email %><br />
+          <%= f.label :email, class: 'form_label' %><br />
           <%= f.email_field :email, autofocus: true %>
         </div>
 
         <div class="field">
-          <%= f.label :password %>
+          <%= f.label :password, class: 'form_label' %>
           <% if @validatable %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
@@ -19,7 +17,7 @@
         </div>
 
         <div class="field">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label :password_confirmation, class: 'form_label' %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
 
@@ -29,5 +27,3 @@
       <% end %>
       <%= render "devise/shared/links" %>
     </div>
-  </div>
-</div>
