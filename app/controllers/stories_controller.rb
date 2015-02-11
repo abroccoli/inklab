@@ -7,6 +7,7 @@ class StoriesController < ApplicationController
 
   def new
     @story = Story.new
+    @line = @story.lines.new
   end
 
   def show
@@ -15,10 +16,8 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-    @story.user_id = current_user.id
 
     if @story.save
-      @story.lines.create(content: params["story"]["lines_attributes"]["0"]["content"])
       flash[:success] = 'Story successfully created!'
       redirect_to story_path(@story)
     else
@@ -30,6 +29,6 @@ class StoriesController < ApplicationController
   private
 
   def story_params
-    params.require(:story).permit(:title, :lines_attributes)
+    params.require(:story).permit(:title, lines_attributes: [:content]).merge(user_id: current_user.id)
   end
 end

@@ -4,9 +4,10 @@ class Story < ActiveRecord::Base
   accepts_nested_attributes_for :lines
 
   validates :title, presence: true
+  validates :lines, presence: true
 
   def compile
-    lines.map{|line| line.content.capitalize}.join(" ")
+    lines.map{|line| line.content.capitalize}.join(' ')
   end
 
   def last_line
