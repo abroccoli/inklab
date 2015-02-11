@@ -1,9 +1,10 @@
 <div class="container desk">
   <div class="row clearfix">
     <div class="col-md-3 column">
-      <h1><% "#{current_user.email}" %></h1>
-
+      <h1><%= current_email %></h1>
       <%= link_to "Create New Story", new_story_path, class: 'link_format'%>
+      <br>
+      <%= link_to "All Stories", stories_path, class: 'link_format'%>
       <br>
       <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'link_format' %>
     </div>
