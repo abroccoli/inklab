@@ -21,7 +21,7 @@
             <td class="title_text">
               <%="#{story.title}"%>
               <br>
-              created by: <%= story.user.email  %>
+              <div class="author">created by: <%= story.user.email  %></div>
             </td>
             <td><%= link_to "Show Story", story_path(story.id), class: 'btn btn-default'%></td>
             <td><%= link_to new_story_line_path(story.id), class: 'btn btn-black' do %>
