@@ -8,7 +8,7 @@
       <br>
       <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'link_format' %>
     </div>
-    <div class="col-md-9 column" id = "right">
+    <div class="col-md-9 column pad" id = "right">
       <table class = "table table-striped">
         <thead>
           <tr>
@@ -18,7 +18,11 @@
         <tbody>
           <% @stories.each do |story| %>
           <tr>
-            <td class="title_text"><%="#{story.title}"%></td>
+            <td class="title_text">
+              <%="#{story.title}"%>
+              <br>
+              created by: <%= story.user.email  %>
+            </td>
             <td><%= link_to "Show Story", story_path(story.id), class: 'btn btn-default'%></td>
             <td><%= link_to new_story_line_path(story.id), class: 'btn btn-black' do %>
             <i class="glyphicon glyphicon-pencil"></i> Add to Story
