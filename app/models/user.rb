@@ -6,9 +6,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def total_stories
+    stories.count
+  end
 
-  def current_email
-    current_user.email
+  def total_lines
+    lines.count
   end
 end
 

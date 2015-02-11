@@ -1,7 +1,13 @@
 <div class="container desk">
   <div class="row clearfix">
     <div class="col-md-3 column">
-      <h1><%= current_email %></h1>
+      <h1><%= current_user.email %></h1>
+      Stories Created: <%= current_user.total_stories %>
+      <br>
+      Lines written: <%= current_user.total_lines  %>
+
+      _________________________
+      <br>
       <%= link_to "Create New Story", new_story_path, class: 'link_format'%>
       <br>
       <%= link_to "All Stories", stories_path, class: 'link_format'%>
