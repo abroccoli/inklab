@@ -2,7 +2,8 @@
   <div class="row clearfix">
     <div class="col-md-3 column">
       <h1>Stories:</h1>
-
+      <%= link_to "My Stories", stories_private_path, class: 'link_format'%>
+      <br>
       <%= link_to "Create New Story", new_story_path, class: 'link_format'%>
       <br>
       <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'link_format' %>
