@@ -1,14 +1,14 @@
 <%= render 'flash' %>
-<div class="container desk">
+<div class="container">
   <div class="row clearfix">
     <div class="col-md-3 column">
-      <h1><%="#{@story.title}"%></h1>
+      <h1 class = "story_title"><%="#{@story.title}"%></h1>
 
       <%= link_to "All Stories", stories_path, class: 'link_format'%>
       <br>
       <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'link_format' %>
     </div>
-    <div class="col-md-9 column" id = "right">
+    <div class="col-md-9 column">
       <p class= "story"><%= @story.compile %></p>
 
     </div>
