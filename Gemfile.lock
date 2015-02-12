@@ -37,6 +37,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    auto_strip_attributes (2.0.6)
+      activerecord (>= 3.0)
     autoprefixer-rails (5.1.0)
       execjs
       json
@@ -203,6 +205,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  auto_strip_attributes (~> 2.0)
   autoprefixer-rails
   bootstrap-sass (~> 3.2.0)
   byebug

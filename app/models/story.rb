@@ -6,6 +6,8 @@ class Story < ActiveRecord::Base
   validates :title, presence: true
   validates :lines, presence: true
 
+  auto_strip_attributes :title
+
   def compile
     lines.map{|line| line.content.capitalize}.join(' ')
   end

@@ -29,6 +29,7 @@ gem 'database_cleaner'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 gem 'rails_12factor', group: :production
+gem "auto_strip_attributes", "~> 2.0"
 
 
 # Use ActiveModel has_secure_password
