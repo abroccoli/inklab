@@ -1,6 +1,6 @@
 <div class="container desk">
   <div class="row clearfix">
-    <div class="col-md-3 column fix">
+    <div class="col-md-3 column">
       <h1 class="story_title"><%= current_user.email %></h1>
       Stories Created: <%= current_user.total_stories %>
       <br>
@@ -14,7 +14,7 @@
       <br>
       <%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'link_format' %>
     </div>
-    <div class="col-md-9 column right">
+    <div class="col-md-9 column">
       <table class = "table table-striped">
         <thead>
           <tr>
