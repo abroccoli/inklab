@@ -1,4 +1,3 @@
-require 'byebug'
 class Story < ActiveRecord::Base
   belongs_to :user
   has_many :lines
@@ -12,7 +11,6 @@ class Story < ActiveRecord::Base
   end
 
   def last_line
-    # binding.byebug
     if lines.last.valid?
       lines.last.content.capitalize
     else

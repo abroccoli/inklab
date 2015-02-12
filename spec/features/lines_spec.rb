@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'byebug'
 
 RSpec.feature 'Managing Story Lines' do
   scenario 'list all Lines for a Story' do

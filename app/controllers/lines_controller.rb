@@ -1,4 +1,3 @@
-require 'byebug'
 class LinesController < ApplicationController
   before_action :set_story
 
@@ -11,7 +10,6 @@ class LinesController < ApplicationController
   end
 
   def create
-    # binding.byebug
     @line = @story.lines.new(line_params)
 
     if @line.save
